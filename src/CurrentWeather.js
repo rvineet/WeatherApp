@@ -97,7 +97,7 @@ function CurrentWeather() {
       </span>
 
       <div>
-        <CurrentInfo data={apiData} />
+        <CurrentInfo data={apiData} city={city}/>
       </div>
     </div>
   ) : (

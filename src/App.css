@@ -9,7 +9,7 @@
 body {
   background: url("https://images.unsplash.com/photo-1621274403997-37aace184f49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:unset;
   overflow-y: scroll;
   height: 110vh;
   font-family: "Poppins", sans-serif;
@@ -18,6 +18,8 @@ body {
 .container {
   padding: 20px 70px;
   color: #fff;
+  display: flex;
+
 }
 
 .search-bar {
@@ -53,30 +55,43 @@ body {
   font-weight: 50;
 }
 .date-container .time {
-  font-size: 35px;
-  padding: 2px;
+  /* background: rgba(0, 0, 0, 0.8); */
+  font-size: 45px;
+  /* padding: 2px; */
   border-radius: 10%;
   display: flex;
   align-items: center;
 }
-
+.place{
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5%;
+  border:1px solid #eee;
+}
 .date-container #am-pm {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .date-container .date {
   font-size: 20px;
 }
-
-.place-container {
+.temperature{
+  font-weight: bolder;
+}
+/* .place-container {
   border-radius: 10%;
   min-width: 55%;
   background: rgba(0, 0, 0, 0.8);
   border: none;
   background-size: contain;
-}
+} */
 .hourly-forecast {
-  width: 100%;
+  border-radius: 5%;
+  /* padding:3px; */
+  min-width: 65%;
+  background: rgba(0, 0, 0, 0.8);
+  background-size: contain;
+  min-height:initial;
+  
 }
 .current-info .others {
   display: flex;
@@ -138,7 +153,9 @@ body {
   .container {
     padding: 20px;
   }
-
+.container{
+  min-width: none;
+}
   .future-forecast {
     justify-content: start;
     align-items: none;

@@ -46,12 +46,15 @@ function CurrentInfo(props) {
         <div className="current-info">
           <div class="date-container">
             <div class="time" id="time">
-              <div> {current.temp}&#176;C</div>
+              <div className="temperature"> {current.temp}&#176;C</div>
               <span>
                 {" "}
                 <img src={imgUrl} alt="weather icon" />
               </span>
+             
             </div>
+            <div className="place">
+             <div>{props && props.city}</div>
             <div class="date" id="date">
               {days[day] + ", " + date + " " + months[month]}
               <div></div>
@@ -62,6 +65,7 @@ function CurrentInfo(props) {
                 (minutes < 10 ? "0" + minutes : minutes) +
                 " " +
                 ampm}
+            </div>
             </div>
 
             <div class="others" id="current-weather-items">
@@ -88,11 +92,11 @@ function CurrentInfo(props) {
             </div>
           </div>
 
-          <div class="place-container">
+          {/* <div class="place-container"> */}
             <div className="hourly-forecast">
               <HourlyForecast data={props && props.data && props.data.hourly} />
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
 

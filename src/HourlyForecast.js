@@ -6,7 +6,10 @@ function HourlyForecast(props) {
   let datasets = [];
 
   props.data.map((hour) => {
-    labels.push(new Date(hour.dt * 1000).toDateString().substring(0, 11));
+    
+    let time =  new Date(hour.dt * 1000).toLocaleString("en-US", {weekday:"long"}).substring(0,3) + " "+
+    new Date(hour.dt * 1000).toLocaleString("en-US", {hour:"numeric"})
+    labels.push(time)
     datasets.push(hour.temp);
   });
 
@@ -24,6 +27,7 @@ function HourlyForecast(props) {
     ],
   };
   const options = {
+    maintainAspectRatio:false,
     legend: {
       fontColor: "blue",
     },
